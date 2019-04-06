@@ -1,0 +1,22 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: tensquare-base  # 微服务名称，以后需要进行服务调用的时候，就会用到
+  datasource:
+    url: jdbc:mysql://192.168.12.168:3306/tensquare_base?characterEncodig=UTF8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+  jpa:
+    show-sql: true # 输出sql语句
+    generate-ddl: true # 是否自动建表
+    database: mysql  # 数据库类型
+eureka:
+  client:
+    registerWithEureka: true #是否将自己注册到 Eureka 服务中， 本身就是所有无需注册
+    fetchRegistry: true #是否从 Eureka 中获取注册信息
+    serviceUrl: #Eureka 客户端与 Eureka 服务端进行交互的地址
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance: #启动多个基础微服务,可以自动实现负载均衡
+      prefer-ip-address: true
