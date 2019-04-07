@@ -22,3 +22,5 @@ eureka:
       defaultZone: http://127.0.0.1:6868/eureka/
   instance: #启动多个基础微服务,可以自动实现负载均衡
       prefer-ip-address: true
+sms:
+  ip: 127.0.0.1
